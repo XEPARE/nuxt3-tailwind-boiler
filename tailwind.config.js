@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -8,13 +10,16 @@ module.exports = {
     "./nuxt.config.{js,ts}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'sans': ['Montserrat', ...defaultTheme.fontFamily.sans],
+      },
+    }
   },
   darkMode: 'class', // or 'media' or 'class'
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
-    require('@tailwindcss/line-clamp'),
     require('@tailwindcss/aspect-ratio'),
   ],
 }
